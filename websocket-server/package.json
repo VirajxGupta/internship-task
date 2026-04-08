@@ -1,0 +1,18 @@
+{
+  "name": "posts-websocket-server",
+  "version": "1.0.0",
+  "description": "Standalone WebSocket server for real-time post search",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "mongoose": "^8.4.1",
+    "ws": "^8.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.3"
+  }
+}

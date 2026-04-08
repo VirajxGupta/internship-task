@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A modern posts explorer with real-time search powered by WebSocket, fetching data from JSONPlaceholder API" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#8a2be2",
+                        "outline": "#988ca0",
+                        "primary-fixed": "#efdbff",
+                        "surface-bright": "#3a3939",
+                        "surface-container": "#201f1f",
+                        "surface-variant": "#353534",
+                        "surface-dim": "#131313",
+                        "surface": "#131313",
+                        "surface-container-highest": "#353534",
+                        "outline-variant": "#4c4354",
+                        "tertiary-fixed": "#62ff96",
+                        "primary": "#dcb8ff",
+                        "secondary": "#ffffff",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-background": "#e5e2e1",
+                        "secondary-fixed": "#00fbfb",
+                        "surface-container-low": "#1c1b1b",
+                        "background": "#131313",
+                        "secondary-container": "#00fbfb",
+                        "tertiary": "#00e475",
+                        "on-surface-variant": "#cfc2d7",
+                        "on-surface": "#e5e2e1",
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+    <title>PostStream — Real-Time Posts Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

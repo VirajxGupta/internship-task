@@ -1,0 +1,16 @@
+{
+  "name": "posts-fullstack-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-stack posts app with React, Express, MongoDB & WebSocket real-time search",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:ws\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:ws": "cd websocket-server && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "install:all": "npm install && cd backend && npm install && cd ../websocket-server && npm install && cd ../frontend && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#e5e2e1",
+                        "secondary-container": "#00fbfb",
+                        "on-tertiary-fixed": "#00210b",
+                        "tertiary": "#00e475",
+                        "on-primary": "#480081",
+                        "on-tertiary-fixed-variant": "#005226",
+                        "primary-container": "#8a2be2",
+                        "outline": "#988ca0",
+                        "primary-fixed": "#efdbff",
+                        "surface-bright": "#3a3939",
+                        "surface-container": "#201f1f",
+                        "surface-variant": "#353534",
+                        "on-secondary": "#003737",
+                        "on-primary-fixed": "#2c0051",
+                        "error-container": "#93000a",
+                        "tertiary-container": "#007338",
+                        "surface-dim": "#131313",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#cfc2d7",
+                        "surface": "#131313",
+                        "surface-tint": "#dcb8ff",
+                        "on-secondary-fixed-variant": "#004f4f",
+                        "on-secondary-fixed": "#002020",
+                        "surface-container-highest": "#353534",
+                        "outline-variant": "#4c4354",
+                        "error": "#ffb4ab",
+                        "on-surface": "#e5e2e1",
+                        "tertiary-fixed": "#62ff96",
+                        "primary": "#dcb8ff",
+                        "inverse-on-surface": "#313030",
+                        "secondary": "#ffffff",
+                        "on-error": "#690005",
+                        "on-primary-container": "#eed9ff",
+                        "on-secondary-container": "#007070",
+                        "inverse-primary": "#8422dc",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary-container": "#47ff8d",
+                        "secondary-fixed": "#00fbfb",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary": "#003918",
+                        "secondary-fixed-dim": "#00dddd",
+                        "tertiary-fixed-dim": "#00e475",
+                        "background": "#131313"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0e0e0e;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(53, 53, 52, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .celestial-glow {
+            box-shadow: 0 0 40px 0 rgba(138, 43, 226, 0.08);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="bg-[#131313]/80 backdrop-blur-xl docked full-width top-0 z-50 bg-gradient-to-b from-[#1C1B1B] to-transparent shadow-[0_8px_32px_rgba(138,43,226,0.08)] sticky top-0">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-[1920px] mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#DCB8FF] font-['Manrope']">PostStream</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#00FBFB] border-b-2 border-[#00FBFB] pb-1 font-['Manrope'] font-bold tracking-tight transition-all" href="#">Dashboard</a>
+<a class="text-[#CFC2D7] hover:text-[#DCB8FF] transition-colors font-['Manrope'] font-bold tracking-tight" href="#">Analytics</a>
+<a class="text-[#CFC2D7] hover:text-[#DCB8FF] transition-colors font-['Manrope'] font-bold tracking-tight" href="#">Streams</a>
+<a class="text-[#CFC2D7] hover:text-[#DCB8FF] transition-colors font-['Manrope'] font-bold tracking-tight" href="#">Settings</a>
+</nav>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<button class="hover:bg-[#353534]/40 rounded-full transition-all p-2 active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[#DCB8FF]">notifications</span>
+</button>
+<button class="hover:bg-[#353534]/40 rounded-full transition-all p-2 active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[#DCB8FF]">account_circle</span>
+</button>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-bold active:scale-95 transition-all shadow-lg shadow-primary-container/20">
+                    New Post
+                </button>
+</div>
+</div>
+</header>
+<main class="relative">
+<!-- Abstract Background Glows -->
+<div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary-container/10 rounded-full blur-[120px] -z-10"></div>
+<div class="absolute top-1/2 right-1/4 w-[400px] h-[400px] bg-secondary-container/5 rounded-full blur-[100px] -z-10"></div>
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-8 pt-24 pb-16 text-center">
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight text-secondary mb-6 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+                Explore Posts in Real-Time
+            </h1>
+<p class="font-body text-on-surface-variant text-lg max-w-2xl mx-auto mb-12 opacity-80">
+                A premium command center for high-velocity data streams. Monitor global narratives with precision and depth.
+            </p>
+<!-- Prominent Search Bar -->
+<div class="relative max-w-3xl mx-auto">
+<div class="group relative flex items-center p-[2px] rounded-full bg-gradient-to-r from-primary via-secondary-container/50 to-primary celestial-glow transition-all duration-500 hover:shadow-[0_0_25px_rgba(0,251,251,0.2)]">
+<div class="flex items-center w-full bg-surface-container-lowest rounded-full px-6 py-4">
+<span class="material-symbols-outlined text-outline mr-4">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-on-surface w-full placeholder:text-outline/50 font-body" placeholder="Search streams, hashtags, or users..." type="text"/>
+<div class="hidden md:flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-variant/30 border border-outline-variant/20 ml-4">
+<span class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_#00E475] animate-pulse"></span>
+<span class="text-[10px] uppercase tracking-widest font-bold text-tertiary">Live search connected</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content Grid -->
+<section class="max-w-7xl mx-auto px-8 pb-32">
+<div class="flex justify-between items-end mb-10">
+<div>
+<h2 class="text-primary-fixed-dim font-headline text-2xl font-bold tracking-tight">Active Streams</h2>
+<p class="text-on-surface-variant text-sm opacity-60">Displaying latest architectural insights</p>
+</div>
+<div class="flex gap-2">
+<span class="px-4 py-1.5 rounded-full bg-surface-bright text-on-surface text-xs font-medium cursor-pointer hover:bg-surface-variant transition-colors border border-outline-variant/10">All Posts</span>
+<span class="px-4 py-1.5 rounded-full bg-surface-variant/30 text-on-surface-variant text-xs font-medium cursor-pointer hover:bg-surface-variant transition-colors border border-outline-variant/10">Trending</span>
+<span class="px-4 py-1.5 rounded-full bg-surface-variant/30 text-on-surface-variant text-xs font-medium cursor-pointer hover:bg-surface-variant transition-colors border border-outline-variant/10">Personal</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="glass-card p-8 rounded-lg border border-outline-variant/20 group hover:border-primary/40 transition-all duration-300 flex flex-col justify-between celestial-glow">
+<div>
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover border border-primary/20" data-alt="portrait of a young designer with glasses in soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIoWqxiurzAfT8bbTdcncl1v-Yv4eg4GNT-fMpa_dkQx5DpswSl0wUkN5zIbKeah8QMP7e-PMaHdHiUPRTSvLeL_Nb60xjAPjZ_7DZtqJUo8kd31Rxxi6gL1Q2KHYs1DqeWHkH10HM2wLIPrAJZgGHmLrBBxr5mKRUUDrfQvki2T0CoIwTWy08ANqS8W8Mx1Lt75V57d1-uR1yz2W162QzMhTwlJ3AerPlpxTK4zJR1CamrioDswg3yyWuZeAI4bvWbAdE-EirkeY"/>
+<div>
+<h4 class="text-secondary font-semibold text-sm leading-tight">Alex Sterling</h4>
+<span class="text-on-surface-variant text-[10px] uppercase tracking-tighter opacity-60">Senior Architect</span>
+</div>
+</div>
+<span class="text-[10px] font-mono text-outline-variant tracking-wider">#PS-2940</span>
+</div>
+<p class="text-on-surface/90 font-body text-sm leading-relaxed mb-8">
+                            Just integrated the new celestial rendering engine into our dashboard. The depth achievable with glassmorphism in dark interfaces is truly transformative. #DesignTech
+                        </p>
+</div>
+<div class="flex justify-between items-center pt-6 border-t border-outline-variant/10">
+<div class="flex items-center gap-4 text-outline">
+<button class="flex items-center gap-1.5 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">favorite</span>
+<span class="text-xs">24</span>
+</button>
+<button class="flex items-center gap-1.5 hover:text-secondary-container transition-colors">
+<span class="material-symbols-outlined text-lg">chat_bubble</span>
+<span class="text-xs">12</span>
+</button>
+</div>
+<span class="text-[10px] text-outline-variant">2m ago</span>
+</div>
+</div>
+<!-- Card 2 (Large Content / Featured) -->
+<div class="glass-card p-8 rounded-lg border border-outline-variant/20 group hover:border-secondary-container/40 transition-all duration-300 md:col-span-2 lg:col-span-1 flex flex-col justify-between celestial-glow">
+<div>
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover border border-secondary-container/20" data-alt="smiling professional woman in a tech office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH8my8oUBRogfvZBbaPpmiZQwG4OzBiA6R3IfZh5D6TNbwbcGZFG4JhHclax8m-sywOWfeCyDI4Mpn0in-DCAWXYpz74N2bXl_sXzdV-2KwKBJzZuvXPx3Q_7x2o43z-Lr2zMvjewmidV5Ot5VKVgl2UEr0zM2MMi8IIThFWaciHAegqxGQeSBHZkc0V9PVheVHQ3_doLbm6gEWFt7Jg2WnTM8ThnCHJZmoyhvPhq9MqiyILznVDXe2DVGe0Uc7K47m5OJ1rfxW7I"/>
+<div>
+<h4 class="text-secondary font-semibold text-sm leading-tight">Sarah Chen</h4>
+<span class="text-on-surface-variant text-[10px] uppercase tracking-tighter opacity-60">Product Lead</span>
+</div>
+</div>
+<span class="text-[10px] font-mono text-outline-variant tracking-wider">#PS-8821</span>
+</div>
+<p class="text-on-surface/90 font-body text-sm leading-relaxed mb-8">
+                            Analyzing the latest real-time throughput metrics. We've hit 50k streams per second without a single frame drop. PostStream's backbone is holding up exceptionally well under heavy load.
+                        </p>
+<div class="rounded-lg overflow-hidden mb-6 opacity-80 group-hover:opacity-100 transition-opacity h-32 bg-surface-container relative">
+<img class="w-full h-full object-cover" data-alt="abstract data visualization with glowing cyan and purple lines on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGMFGRNzJZfaKWVsYS4d5T5RNBzf8hA22WgNvtiYRi61UBChvq_0T-s3awgLNwYrDQ5-p5ZolJb6Neh5oFnukf4_pOIwKSxWefPJKyXDgCFePZhz7NS_7O0DjNPOQZOlzQ4tEWcV0WT2jVUsXuF9cCQD6GObSSQrkxyYqUPGbg_gxM7ymSF99A8DG3srqOOFYNfLTo5Oyk4BK3nzUYi2WkkY9fIdbggWHrVlJl-sicitpLSKsxUZR3eJVHWVfwR0D6E3GFcEIXSfc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
+</div>
+</div>
+<div class="flex justify-between items-center pt-6 border-t border-outline-variant/10">
+<div class="flex items-center gap-4 text-outline">
+<button class="flex items-center gap-1.5 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">favorite</span>
+<span class="text-xs">142</span>
+</button>
+<button class="flex items-center gap-1.5 hover:text-secondary-container transition-colors">
+<span class="material-symbols-outlined text-lg">chat_bubble</span>
+<span class="text-xs">45</span>
+</button>
+</div>
+<span class="text-[10px] text-outline-variant">15m ago</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-card p-8 rounded-lg border border-outline-variant/20 group hover:border-primary/40 transition-all duration-300 flex flex-col justify-between celestial-glow">
+<div>
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover border border-primary/20" data-alt="portrait of creative man in a minimalist workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRWTmeDPvHXludSCJSLxKY-UP9YrfrZsKmjtXEC4uEJcuYUTOvbXfQQ7rP3XX5Vk6OBjGh8dQPvNa1h1rakcQq0vIjdQz9icG7kk7rpR1cHK80Qr32vQ9GxWqJb0qZ1Lm4jZoF-AqkQleEK8f4-EIirzh3RFMUX9bA0cgK_N2t5Ft9J1Z2FFIrENaHdJ-4oGYbFk9kZbVQ9i7ksGhCnM5-4mGtxb1FOXZby531jIO-D_Px1X34GTktLHJXYVd66QDi7eAw_fRxJKE"/>
+<div>
+<h4 class="text-secondary font-semibold text-sm leading-tight">Marcus Thorne</h4>
+<span class="text-on-surface-variant text-[10px] uppercase tracking-tighter opacity-60">System Dev</span>
+</div>
+</div>
+<span class="text-[10px] font-mono text-outline-variant tracking-wider">#PS-4432</span>
+</div>
+<p class="text-on-surface/90 font-body text-sm leading-relaxed mb-8">
+                            Testing the new 'Deep Space' dark theme deployment. Contrast ratios are exceeding accessibility standards while maintaining that premium celestial aesthetic.
+                        </p>
+</div>
+<div class="flex justify-between items-center pt-6 border-t border-outline-variant/10">
+<div class="flex items-center gap-4 text-outline">
+<button class="flex items-center gap-1.5 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">favorite</span>
+<span class="text-xs">89</span>
+</button>
+<button class="flex items-center gap-1.5 hover:text-secondary-container transition-colors">
+<span class="material-symbols-outlined text-lg">chat_bubble</span>
+<span class="text-xs">21</span>
+</button>
+</div>
+<span class="text-[10px] text-outline-variant">1h ago</span>
+</div>
+</div>
+<!-- Card 4 (Analytical Bento) -->
+<div class="glass-card p-8 rounded-lg border border-outline-variant/20 group hover:border-primary/40 transition-all duration-300 flex flex-col justify-between celestial-glow lg:col-span-2">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
+<div class="flex flex-col justify-center">
+<div class="flex items-center gap-3 mb-6">
+<img class="w-10 h-10 rounded-full object-cover border border-primary/20" data-alt="professional headshot of a female data scientist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG6En1kBE_k_et4Iddczv4_0GFqE0xxIOSYwKwE8uuACfM05zaVlwTmCe_e1dPUN42tycaW-52ZDwk7P_6aD16zcZwmXsG1ldcBxgGcoKTUCiZvYw_97r8llqF7FtU_W-uDc7wCYlnIEWbQ6NjRGuuMVePqYwSevgv9kFNW4jr4-eImDhbPeyjTo17ben-CNFWdBmV_VhJMk0WCWL4h2OI-ShHkVwaE-OV_vjsT2OUJdmOWUvkcnLn1FNHehKKO2h7Bkwrkfo7fEA"/>
+<div>
+<h4 class="text-secondary font-semibold text-sm leading-tight">Elena Vance</h4>
+<span class="text-on-surface-variant text-[10px] uppercase tracking-tighter opacity-60">Data Scientist</span>
+</div>
+</div>
+<p class="text-on-surface/90 font-body text-sm leading-relaxed mb-6">
+                                Stream volume has spiked by 25% in the last 10 minutes. Global sentiment analysis is currently tracking positive on the 'Celestial Directive' update.
+                            </p>
+<div class="flex gap-4">
+<div class="bg-surface-container-high/40 p-4 rounded-lg flex-1 border border-outline-variant/10">
+<div class="text-[10px] uppercase text-outline-variant font-bold mb-1">Growth</div>
+<div class="text-xl font-headline font-bold text-tertiary">+25.4%</div>
+</div>
+<div class="bg-surface-container-high/40 p-4 rounded-lg flex-1 border border-outline-variant/10">
+<div class="text-[10px] uppercase text-outline-variant font-bold mb-1">Latency</div>
+<div class="text-xl font-headline font-bold text-secondary-container">12ms</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest/50 rounded-lg p-4 border border-outline-variant/10 flex items-center justify-center min-h-[200px]">
+<img class="w-full h-full object-cover rounded opacity-50 group-hover:opacity-80 transition-opacity" data-alt="complex network graph with glowing nodes and violet connection lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJu2YD8ywaWoletd389X7qdnXVzafSlpZqmh6vs7nSS9b4oHr5YIU41wC87NgOCcsZoKKH7Vv3A6OLhjdglOIYJbwW1amhmBkkX6gJzIGRLnSS-Ivvm1Dp9cCpzEFvQDGJC-SNKfbOsIMhi0Pmg1_qXANXMJlnwv4X_5VgJDTM85kIYY27o002ENxiPc-hL-x2P6xYS2pcp-IWi4tSW9CjjLcz7xFkP3PeKXAIaW8tCk-OvGmjt0c418QRlAyBpbrKBAUmAa_qgrs"/>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="glass-card p-8 rounded-lg border border-outline-variant/20 group hover:border-secondary-container/40 transition-all duration-300 flex flex-col justify-between celestial-glow">
+<div>
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-secondary-container flex items-center justify-center font-bold text-on-primary">AI</div>
+<div>
+<h4 class="text-secondary font-semibold text-sm leading-tight">StreamBot</h4>
+<span class="text-tertiary text-[10px] uppercase tracking-tighter font-bold">System Automated</span>
+</div>
+</div>
+<span class="text-[10px] font-mono text-outline-variant tracking-wider">#PS-0001</span>
+</div>
+<p class="text-on-surface/90 font-body text-sm leading-relaxed mb-8">
+                            Optimization complete. All storage clusters have been re-indexed for deep space search priority. Performance gain: +18%.
+                        </p>
+</div>
+<div class="flex justify-between items-center pt-6 border-t border-outline-variant/10">
+<div class="flex items-center gap-4 text-outline">
+<button class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="text-xs">Optimized</span>
+</button>
+</div>
+<span class="text-[10px] text-outline-variant">Just now</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0E0E0E] w-full py-12 border-t border-[#4C4354]/20 flex flex-col md:flex-row justify-between items-center px-12 gap-6">
+<div class="text-lg font-bold text-[#8A2BE2] font-headline tracking-tighter">PostStream</div>
+<div class="text-[#CFC2D7]/60 font-['Inter'] text-xs uppercase tracking-widest">
+            © 2024 PostStream Celestial Systems
+        </div>
+<nav class="flex gap-8">
+<a class="text-[#CFC2D7]/60 hover:text-[#00FBFB] transition-colors font-['Inter'] text-xs uppercase tracking-widest opacity-80 hover:opacity-100" href="#">Privacy</a>
+<a class="text-[#CFC2D7]/60 hover:text-[#00FBFB] transition-colors font-['Inter'] text-xs uppercase tracking-widest opacity-80 hover:opacity-100" href="#">Terms</a>
+<a class="text-[#CFC2D7]/60 hover:text-[#00FBFB] transition-colors font-['Inter'] text-xs uppercase tracking-widest opacity-80 hover:opacity-100" href="#">Support</a>
+<a class="text-[#CFC2D7]/60 hover:text-[#00FBFB] transition-colors font-['Inter'] text-xs uppercase tracking-widest opacity-80 hover:opacity-100" href="#">API</a>
+</nav>
+</footer>
+</body></html>
