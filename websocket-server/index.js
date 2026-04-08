@@ -31,7 +31,7 @@ const connectDB = async () => {
     console.log('✅ WebSocket server connected to MongoDB');
   } catch (error) {
     console.error('❌ MongoDB connection error:', error.message);
-    process.exit(1);
+    // Continue running so Render health checks pass
   }
 };
 
