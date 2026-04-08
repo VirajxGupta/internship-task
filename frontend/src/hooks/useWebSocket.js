@@ -1,6 +1,11 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 
-const WS_URL = import.meta.env.VITE_WS_URL || 'ws://localhost:5001';
+const rawWsUrl = import.meta.env.VITE_WS_URL || 'ws://localhost:5001';
+// Automatically handle protocol switching and strip trailing slashes
+const WS_URL = rawWsUrl
+  .replace(/^http:\/\//, 'ws://')
+  .replace(/^https:\/\//, 'wss://')
+  .replace(/\/$/, '');
 
 /**
  * Custom hook for WebSocket connection with auto-reconnect.
